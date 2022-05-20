@@ -121,6 +121,7 @@
             this.cbbDinhDangMaMH.Name = "cbbDinhDangMaMH";
             this.cbbDinhDangMaMH.Size = new System.Drawing.Size(259, 28);
             this.cbbDinhDangMaMH.TabIndex = 20;
+            this.cbbDinhDangMaMH.SelectedIndexChanged += new System.EventHandler(this.cbbDinhDangMaMH_SelectedIndexChanged);
             // 
             // lblFormat_ScreenName
             // 
@@ -141,6 +142,7 @@
             this.cbbDinhDangMaPhim.Name = "cbbDinhDangMaPhim";
             this.cbbDinhDangMaPhim.Size = new System.Drawing.Size(259, 28);
             this.cbbDinhDangMaPhim.TabIndex = 21;
+            this.cbbDinhDangMaPhim.SelectedIndexChanged += new System.EventHandler(this.cbbDinhDangMaPhim_SelectedIndexChanged);
             // 
             // lblFormat_ScreenID
             // 
@@ -219,6 +221,7 @@
             // 
             // dgvDinhDangPhim
             // 
+            this.dgvDinhDangPhim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDinhDangPhim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDinhDangPhim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDinhDangPhim.Location = new System.Drawing.Point(0, 0);
@@ -227,6 +230,7 @@
             this.dgvDinhDangPhim.RowTemplate.Height = 28;
             this.dgvDinhDangPhim.Size = new System.Drawing.Size(1043, 448);
             this.dgvDinhDangPhim.TabIndex = 0;
+            this.dgvDinhDangPhim.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDinhDangPhim_RowHeaderMouseClick);
             // 
             // DinhDang
             // 

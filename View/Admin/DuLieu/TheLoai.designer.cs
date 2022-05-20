@@ -146,6 +146,7 @@
             // 
             // dgvTheLoai
             // 
+            this.dgvTheLoai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTheLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTheLoai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTheLoai.Location = new System.Drawing.Point(0, 0);

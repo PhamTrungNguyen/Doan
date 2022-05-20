@@ -67,6 +67,8 @@
     <Compile Include="DTO\CBBPhim.cs" />
     <Compile Include="DTO\CBBPhongChieu.cs" />
     <Compile Include="DTO\CBBTheLoai.cs" />
+    <Compile Include="DTO\DinhDangPhimDTO.cs" />
+    <Compile Include="DTO\LoaiManHinhDTO.cs" />
     <Compile Include="DTO\PhimDTO.cs" />
     <Compile Include="DTO\TheLoaiDTO.cs" />
     <Compile Include="KhachHang.cs">

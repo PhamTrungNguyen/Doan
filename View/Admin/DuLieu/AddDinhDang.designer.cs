@@ -72,7 +72,7 @@
             this.cbbDinhDangMaMH.Name = "cbbDinhDangMaMH";
             this.cbbDinhDangMaMH.Size = new System.Drawing.Size(259, 28);
             this.cbbDinhDangMaMH.TabIndex = 70;
-            this.cbbDinhDangMaMH.SelectedIndexChanged += new System.EventHandler(this.cbbDinhDangMaMH_SelectedIndexChanged);
+            this.cbbDinhDangMaMH.SelectedIndexChanged += new System.EventHandler(this.cbbDinhDangMaMH_SelectedIndexChanged_1);
             // 
             // lblFormat_ScreenName
             // 

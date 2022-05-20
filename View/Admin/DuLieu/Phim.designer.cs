@@ -72,6 +72,7 @@
             // 
             // dgvMovie
             // 
+            this.dgvMovie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMovie.Location = new System.Drawing.Point(0, 0);
@@ -98,7 +99,8 @@
             this.txtPhimMa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhimMa.Name = "txtPhimMa";
             this.txtPhimMa.Size = new System.Drawing.Size(164, 26);
-            this.txtPhimMa.TabIndex = 45;            // 
+            this.txtPhimMa.TabIndex = 45;
+            // 
             // lblMovieName
             // 
             this.lblMovieName.AutoSize = true;

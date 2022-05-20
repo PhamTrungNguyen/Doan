@@ -58,8 +58,8 @@ namespace DoAn.BLL
             {
                 p.IDPhim = phim.IDPhim;
                 p.TenPhim = phim.TenPhim;
-                p.ThoiLuong=Convert.ToDouble(phim.ThoiLuong);
-                p.NgayKhoiChieu= Convert.ToDateTime(phim.NgayKhoiChieu);
+                p.ThoiLuong = Convert.ToDouble(phim.ThoiLuong);
+                p.NgayKhoiChieu = Convert.ToDateTime(phim.NgayKhoiChieu);
                 p.NgayKetThuc = Convert.ToDateTime(phim.NgayKetThuc);
                 p.SanXuat = phim.SanXuat;
                 p.NamSX = Convert.ToInt32(phim.NamSX);
@@ -76,7 +76,7 @@ namespace DoAn.BLL
         public Phim GetPhimByIDPhim(string IDPhim)
         {
             return db.Phims.Find(IDPhim);
-        }   
+        }
         //---------------------------- TheLoai ----------------------------
 
         public List<TheLoaiDTO> ShowTheLoai()
@@ -99,7 +99,7 @@ namespace DoAn.BLL
                 if (i.IDTheLoai == IDTheLoai)
                 {
                     db.Phims.Remove(i);
-              
+
                 }
             }
             TheLoai tl = db.TheLoais.Find(IDTheLoai);
@@ -122,7 +122,7 @@ namespace DoAn.BLL
             db.SaveChanges();
         }
         public List<CBBTheLoai> GetCBBTheLoai()
-        {    
+        {
             List<CBBTheLoai> data = new List<CBBTheLoai>();
             foreach (TheLoai i in db.TheLoais)
             {
@@ -137,6 +137,66 @@ namespace DoAn.BLL
         public TheLoai GetTheLoaiByIDTheLoai(string IDTheLoai)
         {
             return db.TheLoais.Find(IDTheLoai);
+        }
+        //---------------------------- DinhDangPhim ----------------------------
+        public List<DinhDangPhimDTO> ShowDinhDangPhim()
+        {
+            List<DinhDangPhimDTO> dataDinhDangPhim = new List<DinhDangPhimDTO>();
+            dataDinhDangPhim = (from p in db.DinhDangPhims
+                                select
+                        new DinhDangPhimDTO
+                        {
+                            ID_DinhDangPhim = p.IDDinhDangPhim,
+                            ID_Phim = p.IDPhim,
+                            ID_LoaiManHinh = p.IDLoaiManHinh,
+                        }).ToList();
+            return dataDinhDangPhim;
+        }
+        public void ExecuteDBDinhDangPhim(DinhDangPhim ddpim)
+        {
+            DinhDangPhim dinhDangPhim = db.DinhDangPhims.Find(ddpim.IDDinhDangPhim);
+            if (dinhDangPhim != null)
+            {
+                dinhDangPhim.IDDinhDangPhim = ddpim.IDDinhDangPhim;
+                dinhDangPhim.IDPhim = ddpim.IDPhim;
+                dinhDangPhim.IDLoaiManHinh = ddpim.IDLoaiManHinh;
+
+            }
+            else
+            {
+                db.DinhDangPhims.Add(ddpim);
+            }
+            db.SaveChanges();
+        }
+        public List<CBBPhim> GetCBBPhim()
+        {
+            List<CBBPhim> data = new List<CBBPhim>();
+            foreach (Phim i in db.Phims)
+            {
+                data.Add(new CBBPhim
+                {
+                    value = i.IDPhim,
+                    text = i.TenPhim,
+                });
+            }
+            return data;
+        }
+        public List<CBBLoaiManHinh> GetCBBLoaiManHinh()
+        {
+            List<CBBLoaiManHinh> data = new List<CBBLoaiManHinh>();
+            foreach (LoaiManHinh i in db.LoaiManHinhs)
+            {
+                data.Add(new CBBLoaiManHinh
+                {
+                    value = i.IDLoaiManHinh,
+                    text = i.TenManHinh,
+                });
+            }
+            return data;
+        }
+        public DinhDangPhim GetDinhDangPhimByMaDinhDang(string IDDinhDangPhim)
+        {
+            return db.DinhDangPhims.Find(IDDinhDangPhim);
         }
     }
 }
