@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="659e59e60000411fb9ae75f9626cbd6c" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="doanModel.DinhDangPhim" Width="1.5" PointX="5.375" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.KhachHang" Width="1.5" PointX="7.375" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.LichChieu" Width="1.5" PointX="5.375" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.LoaiManHinh" Width="1.5" PointX="3.125" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.NhanVien" Width="1.5" PointX="9.625" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.Phim" Width="1.5" PointX="3.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.PhongChieu" Width="1.5" PointX="3.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.TheLoai" Width="1.5" PointX="5.375" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="doanModel.Ve" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="doanModel.FK__DinhDangP__IDLoa__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="doanModel.FK__DinhDangP__IDPhi__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="doanModel.FK__LichChieu__IDDin__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="doanModel.FK__Ve__IDKhachHang__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="doanModel.FK__LichChieu__IDPho__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="doanModel.FK__Ve__IDLichChieu__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="doanModel.FK__PhongChie__IDMan__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="doanModel.FK_Phim_TheLoai1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="doanModel.TaiKhoan" Width="1.5" PointX="9.625" PointY="5.375" />
+        <AssociationConnector Association="doanModel.FK__TaiKhoan__idNhan__5070F446" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

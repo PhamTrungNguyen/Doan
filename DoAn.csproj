@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1B1DD98-7B4E-431E-A3E9-FE69E0C34199}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DoAn</RootNamespace>
+    <AssemblyName>DoAn</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\QLBLL.cs" />
+    <Compile Include="ComplexType1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DinhDangPhim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\CBBDinhDang.cs" />
+    <Compile Include="DTO\CBBLoaiManHinh.cs" />
+    <Compile Include="DTO\CBBPhim.cs" />
+    <Compile Include="DTO\CBBPhongChieu.cs" />
+    <Compile Include="DTO\CBBTheLoai.cs" />
+    <Compile Include="DTO\PhimDTO.cs" />
+    <Compile Include="DTO\TheLoaiDTO.cs" />
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LichChieu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiManHinh.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Phim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhongChieu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoan.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheLoai.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ve.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DanhThu\DoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DanhThu\DoanhThu.designer.cs">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu.designer.cs">
+      <DependentUpon>DuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddDinhDang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddDinhDang.designer.cs">
+      <DependentUpon>AddDinhDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddLoaiMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddLoaiMH.designer.cs">
+      <DependentUpon>AddLoaiMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddPhim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddPhim.designer.cs">
+      <DependentUpon>AddPhim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddPhongChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddPhongChieu.designer.cs">
+      <DependentUpon>AddPhongChieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddTheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\AddTheLoai.designer.cs">
+      <DependentUpon>AddTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\DinhDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\DinhDang.designer.cs">
+      <DependentUpon>DinhDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\LichChieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\LichChieu.designer.cs">
+      <DependentUpon>LichChieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\LoaiManHinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\LoaiManHinh.designer.cs">
+      <DependentUpon>LoaiManHinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\Phim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\Phim.designer.cs">
+      <DependentUpon>Phim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\PhongChieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\PhongChieu.designer.cs">
+      <DependentUpon>PhongChieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\TheLoai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DuLieu\TheLoai.designer.cs">
+      <DependentUpon>TheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\KhachHang\KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\KhachHang\KhachHang.designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\NhanVien\NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\NhanVien\NhanVien.designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\TaiKhoan\ThongTinTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\TaiKhoan\ThongTinTaiKhoan.designer.cs">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView\Admin1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView\Admin1.designer.cs">
+      <DependentUpon>Admin1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView\BangDieuKhien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView\BangDieuKhien.designer.cs">
+      <DependentUpon>BangDieuKhien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView\DangNhap.designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView\Database.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView\Database.designer.cs">
+      <DependentUpon>Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView\DoiMatKhau.designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView\frmBang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView\frmBang.designer.cs">
+      <DependentUpon>frmBang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView\frmPhongChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView\frmPhongChieu.designer.cs">
+      <DependentUpon>frmPhongChieu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Admin\DanhThu\DoanhThu.resx">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu.resx">
+      <DependentUpon>DuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\AddDinhDang.resx">
+      <DependentUpon>AddDinhDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\AddLoaiMH.resx">
+      <DependentUpon>AddLoaiMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\AddPhim.resx">
+      <DependentUpon>AddPhim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\AddPhongChieu.resx">
+      <DependentUpon>AddPhongChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\AddTheLoai.resx">
+      <DependentUpon>AddTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\DinhDang.resx">
+      <DependentUpon>DinhDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\LichChieu.resx">
+      <DependentUpon>LichChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\LoaiManHinh.resx">
+      <DependentUpon>LoaiManHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\Phim.resx">
+      <DependentUpon>Phim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\PhongChieu.resx">
+      <DependentUpon>PhongChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\DuLieu\TheLoai.resx">
+      <DependentUpon>TheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\KhachHang\KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\NhanVien\NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\TaiKhoan\ThongTinTaiKhoan.resx">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView\Admin1.resx">
+      <DependentUpon>Admin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView\BangDieuKhien.resx">
+      <DependentUpon>BangDieuKhien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView\Database.resx">
+      <DependentUpon>Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView\frmBang.resx">
+      <DependentUpon>frmBang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView\frmPhongChieu.resx">
+      <DependentUpon>frmPhongChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

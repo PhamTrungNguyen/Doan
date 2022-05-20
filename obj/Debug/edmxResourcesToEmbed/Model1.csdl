@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="doanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DinhDangPhim">
+    <Key>
+      <PropertyRef Name="IDDinhDangPhim" />
+    </Key>
+    <Property Name="IDDinhDangPhim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IDPhim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IDLoaiManHinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LoaiManHinh" Relationship="Self.FK__DinhDangP__IDLoa__31EC6D26" FromRole="DinhDangPhim" ToRole="LoaiManHinh" />
+    <NavigationProperty Name="Phim" Relationship="Self.FK__DinhDangP__IDPhi__30F848ED" FromRole="DinhDangPhim" ToRole="Phim" />
+    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__IDDin__38996AB5" FromRole="DinhDangPhim" ToRole="LichChieu" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="idKhachHang" />
+    </Key>
+    <Property Name="idKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoTenKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySinhKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChiKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SDTKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CMNDKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiemTichLuy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__IDKhachHang__3C69FB99" FromRole="KhachHang" ToRole="Ve" />
+  </EntityType>
+  <EntityType Name="LichChieu">
+    <Key>
+      <PropertyRef Name="IDLichChieu" />
+    </Key>
+    <Property Name="IDLichChieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ThoiGianChieu" Type="DateTime" Precision="3" />
+    <Property Name="IDPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IDDinhDang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaVe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DinhDangPhim" Relationship="Self.FK__LichChieu__IDDin__38996AB5" FromRole="LichChieu" ToRole="DinhDangPhim" />
+    <NavigationProperty Name="PhongChieu" Relationship="Self.FK__LichChieu__IDPho__37A5467C" FromRole="LichChieu" ToRole="PhongChieu" />
+    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__IDLichChieu__3B75D760" FromRole="LichChieu" ToRole="Ve" />
+  </EntityType>
+  <EntityType Name="LoaiManHinh">
+    <Key>
+      <PropertyRef Name="IDLoaiManHinh" />
+    </Key>
+    <Property Name="IDLoaiManHinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenManHinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DinhDangPhims" Relationship="Self.FK__DinhDangP__IDLoa__31EC6D26" FromRole="LoaiManHinh" ToRole="DinhDangPhim" />
+    <NavigationProperty Name="PhongChieux" Relationship="Self.FK__PhongChie__IDMan__34C8D9D1" FromRole="LoaiManHinh" ToRole="PhongChieu" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="idNhanVien" />
+    </Key>
+    <Property Name="idNhanVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySinhNV" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DiaChiNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SDTNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CMNDNV" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TaiKhoans" Relationship="doanModel.FK__TaiKhoan__idNhan__5070F446" FromRole="NhanVien" ToRole="TaiKhoan" />
+  </EntityType>
+  <EntityType Name="Phim">
+    <Key>
+      <PropertyRef Name="IDPhim" />
+    </Key>
+    <Property Name="IDPhim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenPhim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThoiLuong" Type="Double" />
+    <Property Name="NgayKhoiChieu" Type="DateTime" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
+    <Property Name="SanXuat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DaoDien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NamSX" Type="Int32" />
+    <Property Name="IDTheLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DinhDangPhims" Relationship="Self.FK__DinhDangP__IDPhi__30F848ED" FromRole="Phim" ToRole="DinhDangPhim" />
+    <NavigationProperty Name="TheLoai" Relationship="Self.FK_Phim_TheLoai1" FromRole="Phim" ToRole="TheLoai" />
+  </EntityType>
+  <EntityType Name="PhongChieu">
+    <Key>
+      <PropertyRef Name="IDPhongChieu" />
+    </Key>
+    <Property Name="IDPhongChieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDManHinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoChoNgoi" Type="Int32" />
+    <Property Name="TinhTrang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoHangGhe" Type="Int32" />
+    <Property Name="SoGheMotHang" Type="Int32" />
+    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__IDPho__37A5467C" FromRole="PhongChieu" ToRole="LichChieu" />
+    <NavigationProperty Name="LoaiManHinh" Relationship="Self.FK__PhongChie__IDMan__34C8D9D1" FromRole="PhongChieu" ToRole="LoaiManHinh" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="IDTheLoai" />
+    </Key>
+    <Property Name="IDTheLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenTheLoai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Phims" Relationship="Self.FK_Phim_TheLoai1" FromRole="TheLoai" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="Ve">
+    <Key>
+      <PropertyRef Name="IDVe" />
+    </Key>
+    <Property Name="IDVe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoaiVe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDLichChieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaGheNgoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TienBanVe" Type="Double" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK__Ve__IDKhachHang__3C69FB99" FromRole="Ve" ToRole="KhachHang" />
+    <NavigationProperty Name="LichChieu" Relationship="Self.FK__Ve__IDLichChieu__3B75D760" FromRole="Ve" ToRole="LichChieu" />
+  </EntityType>
+  <Association Name="FK__DinhDangP__IDLoa__31EC6D26">
+    <End Role="LoaiManHinh" Type="Self.LoaiManHinh" Multiplicity="1" />
+    <End Role="DinhDangPhim" Type="Self.DinhDangPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiManHinh">
+        <PropertyRef Name="IDLoaiManHinh" />
+      </Principal>
+      <Dependent Role="DinhDangPhim">
+        <PropertyRef Name="IDLoaiManHinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DinhDangP__IDPhi__30F848ED">
+    <End Role="Phim" Type="Self.Phim" Multiplicity="1" />
+    <End Role="DinhDangPhim" Type="Self.DinhDangPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phim">
+        <PropertyRef Name="IDPhim" />
+      </Principal>
+      <Dependent Role="DinhDangPhim">
+        <PropertyRef Name="IDPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LichChieu__IDDin__38996AB5">
+    <End Role="DinhDangPhim" Type="Self.DinhDangPhim" Multiplicity="1" />
+    <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DinhDangPhim">
+        <PropertyRef Name="IDDinhDangPhim" />
+      </Principal>
+      <Dependent Role="LichChieu">
+        <PropertyRef Name="IDDinhDang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ve__IDKhachHang__3C69FB99">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="idKhachHang" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LichChieu__IDPho__37A5467C">
+    <End Role="PhongChieu" Type="Self.PhongChieu" Multiplicity="1" />
+    <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhongChieu">
+        <PropertyRef Name="IDPhongChieu" />
+      </Principal>
+      <Dependent Role="LichChieu">
+        <PropertyRef Name="IDPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ve__IDLichChieu__3B75D760">
+    <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichChieu">
+        <PropertyRef Name="IDLichChieu" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDLichChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhongChie__IDMan__34C8D9D1">
+    <End Role="LoaiManHinh" Type="Self.LoaiManHinh" Multiplicity="1" />
+    <End Role="PhongChieu" Type="Self.PhongChieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiManHinh">
+        <PropertyRef Name="IDLoaiManHinh" />
+      </Principal>
+      <Dependent Role="PhongChieu">
+        <PropertyRef Name="IDManHinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Phim_TheLoai1">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="IDTheLoai" />
+      </Principal>
+      <Dependent Role="Phim">
+        <PropertyRef Name="IDTheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="doanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DinhDangPhims" EntityType="Self.DinhDangPhim" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="LichChieux" EntityType="Self.LichChieu" />
+    <EntitySet Name="LoaiManHinhs" EntityType="Self.LoaiManHinh" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="Phims" EntityType="Self.Phim" />
+    <EntitySet Name="PhongChieux" EntityType="Self.PhongChieu" />
+    <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
+    <EntitySet Name="Ves" EntityType="Self.Ve" />
+    <AssociationSet Name="FK__DinhDangP__IDLoa__31EC6D26" Association="Self.FK__DinhDangP__IDLoa__31EC6D26">
+      <End Role="LoaiManHinh" EntitySet="LoaiManHinhs" />
+      <End Role="DinhDangPhim" EntitySet="DinhDangPhims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DinhDangP__IDPhi__30F848ED" Association="Self.FK__DinhDangP__IDPhi__30F848ED">
+      <End Role="Phim" EntitySet="Phims" />
+      <End Role="DinhDangPhim" EntitySet="DinhDangPhims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LichChieu__IDDin__38996AB5" Association="Self.FK__LichChieu__IDDin__38996AB5">
+      <End Role="DinhDangPhim" EntitySet="DinhDangPhims" />
+      <End Role="LichChieu" EntitySet="LichChieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ve__IDKhachHang__3C69FB99" Association="Self.FK__Ve__IDKhachHang__3C69FB99">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="Ve" EntitySet="Ves" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LichChieu__IDPho__37A5467C" Association="Self.FK__LichChieu__IDPho__37A5467C">
+      <End Role="PhongChieu" EntitySet="PhongChieux" />
+      <End Role="LichChieu" EntitySet="LichChieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ve__IDLichChieu__3B75D760" Association="Self.FK__Ve__IDLichChieu__3B75D760">
+      <End Role="LichChieu" EntitySet="LichChieux" />
+      <End Role="Ve" EntitySet="Ves" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhongChie__IDMan__34C8D9D1" Association="Self.FK__PhongChie__IDMan__34C8D9D1">
+      <End Role="LoaiManHinh" EntitySet="LoaiManHinhs" />
+      <End Role="PhongChieu" EntitySet="PhongChieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Phim_TheLoai1" Association="Self.FK_Phim_TheLoai1">
+      <End Role="TheLoai" EntitySet="TheLoais" />
+      <End Role="Phim" EntitySet="Phims" />
+    </AssociationSet>
+    <EntitySet Name="TaiKhoans" EntityType="doanModel.TaiKhoan" />
+    <AssociationSet Name="FK__TaiKhoan__idNhan__5070F446" Association="doanModel.FK__TaiKhoan__idNhan__5070F446">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="ComplexType1" />
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoaiTK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idNhanVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhanVien" Relationship="doanModel.FK__TaiKhoan__idNhan__5070F446" FromRole="TaiKhoan" ToRole="NhanVien" />
+  </EntityType>
+  <Association Name="FK__TaiKhoan__idNhan__5070F446">
+    <End Type="doanModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
+    <End Type="doanModel.TaiKhoan" Role="TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="idNhanVien" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="idNhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
