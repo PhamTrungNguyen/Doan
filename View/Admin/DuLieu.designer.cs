@@ -70,7 +70,7 @@
             this.btnDinhDang.Name = "btnDinhDang";
             this.btnDinhDang.Size = new System.Drawing.Size(142, 48);
             this.btnDinhDang.TabIndex = 0;
-            this.btnDinhDang.Text = "Định Dạng";
+            this.btnDinhDang.Text = "Phân loại Phim và Màn hình";
             this.btnDinhDang.UseVisualStyleBackColor = true;
             this.btnDinhDang.Click += new System.EventHandler(this.btnDinhDang_Click);
             // 

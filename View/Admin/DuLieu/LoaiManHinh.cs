@@ -1,4 +1,5 @@
 ﻿//using pbl3.BLL;
+using DoAn.BLL;
 using pbl3.View.Admin.DuLieu;
 using System;
 using System.Collections.Generic;
@@ -24,59 +25,55 @@ namespace pbl3.Admin.DuLieu
         {
 
         }
-        //void Reload()
-        //{
-        //    dgvManHinh.DataSource = loaiMHBLL.LoadLoaiMH();
-        //}
+        void Reload()
+        {
+            dgvManHinh.DataSource = QLBLL.Instance.ShowLMH();
+        }
         private void BtnManHinhXem_Click(object sender, EventArgs e)
         {
-            //Reload();
+            Reload();
         }
 
         private void BtnManHinhThem_Click(object sender, EventArgs e)
         {
-            //AddLoaiMH addLoaiMH = new AddLoaiMH();
-            //addLoaiMH.d = new AddLoaiMH.Mydel(Reload);
-            //addLoaiMH.Show();
+            AddLoaiMH addLoaiMH = new AddLoaiMH("");
+            addLoaiMH.d = new AddLoaiMH.Mydel(Reload);
+            addLoaiMH.Show();
         }
 
         private void BtnManHinhSua_Click(object sender, EventArgs e)
         {
-            //string IDLoaiMH = txtManHinhMa.Text;
-            //string TenLoaiMH = txttxtManHinhTen.Text;
-            //loaiMHBLL.UpdateLoaiMH(IDLoaiMH, TenLoaiMH);
-            //Reload();
+            if (dgvManHinh.SelectedRows.Count == 1)
+            {
+                string IDLoaiMH = dgvManHinh.SelectedRows[0].Cells["ID_LoaiManHinh"].Value.ToString();
+                AddLoaiMH addlmh = new AddLoaiMH(IDLoaiMH);
+                addlmh.Show();
+                addlmh.d = new AddLoaiMH.Mydel(Reload);
+            }
         }
 
         private void BtnManHinhXoa_Click(object sender, EventArgs e)
         {
-            //if (dgvManHinh.SelectedRows.Count == 1)
-            //{
-            //    DialogResult ret = MessageBox.Show("Bạn có muốn xóa sản phẩm này?", "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    if (ret == DialogResult.Yes)
-            //    {
-            //        {
-            //            string maLoaiMH = dgvManHinh.SelectedRows[0].Cells["Mã loại màn hình"].Value.ToString();
-            //            loaiMHBLL.XoaLoaiMH(maLoaiMH);
-            //            Reload();
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Bạn chưa chọn để xóa");
-            //}
+            if (dgvManHinh.SelectedRows.Count == 1)
+            {
+                DialogResult ret = MessageBox.Show("Bạn có muốn xóa sản phẩm này?", "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ret == DialogResult.Yes)
+                {
+                    string maLMH = dgvManHinh.SelectedRows[0].Cells["ID_LoaiManHinh"].Value.ToString();
+                    QLBLL.Instance.DelLoaiMH(maLMH);
+                    Reload();
+                }
+            }
         }
 
         private void dgvManHinh_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //if (dgvManHinh.SelectedRows.Count == 1)
-            //{
-            //    txtManHinhMa.Enabled = false;
-            //    txtManHinhMa.Text = dgvManHinh.SelectedRows[0].Cells["Mã loại màn hình"].Value.ToString();
-            //    txttxtManHinhTen.Text = dgvManHinh.SelectedRows[0].Cells["Tên màn hình"].Value.ToString();
-
-            //}
+            if (dgvManHinh.SelectedRows.Count == 1)
+            {
+                txtManHinhMa.Enabled = false;
+                txtManHinhMa.Text = dgvManHinh.SelectedRows[0].Cells["ID_LoaiManHinh"].Value.ToString();
+                txttxtManHinhTen.Text = dgvManHinh.SelectedRows[0].Cells["TenManHinh"].Value.ToString();
+            }
         }
     }
 }

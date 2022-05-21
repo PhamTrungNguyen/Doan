@@ -38,6 +38,7 @@
             this.pnAdmin = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pn.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -46,6 +47,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnNhanVien);
             this.panel1.Controls.Add(this.btnTaiKhoan);
             this.panel1.Controls.Add(this.btnKhachHang);
@@ -56,7 +58,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 602);
+            this.panel1.Size = new System.Drawing.Size(300, 676);
             this.panel1.TabIndex = 0;
             // 
             // btnNhanVien
@@ -136,7 +138,7 @@
             this.pn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn.Location = new System.Drawing.Point(300, 0);
             this.pn.Name = "pn";
-            this.pn.Size = new System.Drawing.Size(750, 602);
+            this.pn.Size = new System.Drawing.Size(750, 676);
             this.pn.TabIndex = 1;
             // 
             // pnAdmin
@@ -144,7 +146,7 @@
             this.pnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnAdmin.Location = new System.Drawing.Point(0, 80);
             this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Size = new System.Drawing.Size(750, 522);
+            this.pnAdmin.Size = new System.Drawing.Size(750, 596);
             this.pnAdmin.TabIndex = 1;
             // 
             // panel2
@@ -168,11 +170,24 @@
             this.label1.Text = "Chào Mừng Đến Với Chương Trình Quản Lý Rạp Chiếu Phim";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Aqua;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(14, 568);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(265, 74);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Vé";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Admin1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 602);
+            this.ClientSize = new System.Drawing.Size(1050, 676);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,5 +214,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnAdmin;
+        private System.Windows.Forms.Button button1;
     }
 }

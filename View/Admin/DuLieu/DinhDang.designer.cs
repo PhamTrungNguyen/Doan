@@ -91,6 +91,7 @@
             this.btnDinhDangXoa.TabIndex = 59;
             this.btnDinhDangXoa.Text = "Xóa";
             this.btnDinhDangXoa.UseVisualStyleBackColor = true;
+            this.btnDinhDangXoa.Click += new System.EventHandler(this.btnDinhDangXoa_Click);
             // 
             // btnDinhDangSua
             // 

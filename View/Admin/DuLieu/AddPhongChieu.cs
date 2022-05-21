@@ -1,5 +1,7 @@
 ﻿//using pbl3.DAL;
 //using pbl3.DAO;
+using DoAn;
+using DoAn.BLL;
 using pbl3.DTO;
 using System;
 using System.Collections.Generic;
@@ -15,45 +17,55 @@ namespace pbl3.View.Admin.DuLieu
 {
     public partial class AddPhongChieu : Form
     {
-        //public delegate void Mydel();
-        //public Mydel d;
-        //DataProvider data = new DataProvider();
-        //PhongChieuDAL phongchieuDAL = new PhongChieuDAL();
-        //public AddPhongChieu()
-        //{
-        //    InitializeComponent();
-        //    string query = "select * from LoaiManHinh"; // 
-        //    foreach (DataRow i in data.ExecuteQuery(query).Rows)
-        //    {
-        //        cbbManHinh.Items.Add(new CBBLoaiManHinh
-        //        {
-        //            value = i["IDLoaiManHinh"].ToString(),
-        //            text = i["TenManHinh"].ToString()
-        //        });
-        //    }
-        //}
+        public delegate void Mydel();
+        public Mydel d;
+        public string IDPhongChieu { get; set; }
+
+        public AddPhongChieu(string id)
+        {
+            InitializeComponent();
+            IDPhongChieu = id;
+            cbbManHinh.Items.AddRange(QLBLL.Instance.GetCBBLoaiMH().ToArray());
+            GUI();
+        }
+        public void GUI()
+        {
+            PhongChieu a = QLBLL.Instance.GetPCByIDPC(IDPhongChieu);
+            if (a != null)
+            {
+                txtIDPhongChieu.Enabled = false;
+                txtIDPhongChieu.Text = a.IDPhongChieu;
+                txtTenPhong.Text = a.TenPhong;
+                txtSoChoNgoi.Text = Convert.ToString(a.SoChoNgoi);
+                txtTinhTrang.Text = a.TinhTrang;
+                txtSoHangGhe.Text = Convert.ToString(a.SoHangGhe);
+                txtSoGhe1Hang.Text = Convert.ToString(a.SoGheMotHang);
+                foreach (CBBLoaiManHinh r in cbbManHinh.Items)
+                {
+                    if (r.value == a.IDManHinh)
+                    {
+                        cbbManHinh.SelectedItem = r;
+                    }
+                }
+
+            }
+        }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            //string IDPhongChieu = txtIDPhongChieu.Text;
-            //string TenPhongChieu = txtTenPhong.Text;
-            //int SoChoNgoi = Convert.ToInt32(txtSoChoNgoi.Text);
-            //string TinhTrang = txtTinhTrang.Text;
-            //int SoHangGhe = Convert.ToInt32(txtSoHangGhe.Text);
-            //int SoGhe1Hang = Convert.ToInt32(txtSoGhe1Hang.Text);
-            //string id = ((CBBLoaiManHinh)cbbManHinh.SelectedItem).value;
-            //string IDLoaiMH = "";
-            //foreach (CBBLoaiManHinh i in cbbManHinh.Items)
-            //{
-            //    if (i.value == id)
-            //    {
-            //        IDLoaiMH = i.value;
-            //    }
-            //}
-
-            //InsertPhongChieu(IDPhongChieu, TenPhongChieu, IDLoaiMH, SoChoNgoi, TinhTrang, SoHangGhe, SoGhe1Hang);
-            //d();
-            //this.Close();
+            PhongChieu pc = new PhongChieu
+            {
+                IDPhongChieu = txtIDPhongChieu.Text,
+                TenPhong = txtTenPhong.Text,
+                IDManHinh = ((CBBLoaiManHinh)cbbManHinh.SelectedItem).value,
+                SoChoNgoi = Convert.ToInt32(txtSoChoNgoi.Text),
+                TinhTrang = txtTinhTrang.Text,
+                SoHangGhe = Convert.ToInt32(txtSoHangGhe.Text),
+                SoGheMotHang = Convert.ToInt32(txtSoGhe1Hang.Text),
+            };
+            QLBLL.Instance.ExecuteDBPhongChieu(pc);
+            d();
+            this.Close();
         }
         //private void InsertPhongChieu(string IDPhongChieu, string TenPhongChieu, string IDManHinh, int SoChoNgoi, string TinhTrang, int SoHangGhe, int SoGheMotHang)
         //{

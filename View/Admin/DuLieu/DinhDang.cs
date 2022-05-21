@@ -123,7 +123,23 @@ namespace pbl3.Admin.DuLieu
             }
         }
 
-       
+        private void btnDinhDangXoa_Click(object sender, EventArgs e)
+        {
+            if (dgvDinhDangPhim.SelectedRows.Count == 1)
+            {
+                DialogResult ret = MessageBox.Show("Bạn có muốn xóa sản phẩm này?", "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ret == DialogResult.Yes)
+                {
+                    string ID_DinhDangPhim = dgvDinhDangPhim.SelectedRows[0].Cells["ID_DinhDangPhim"].Value.ToString();
+                    QLBLL.Instance.DelDinhDangPhim(ID_DinhDangPhim);
+                    Reload();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn để xóa");
+            }
+        }
     }
 
 

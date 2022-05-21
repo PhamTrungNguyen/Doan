@@ -1,4 +1,4 @@
-CREATE DATABASE doan
+ÔªøCREATE DATABASE doan
 GO
 
 USE doan
@@ -123,13 +123,32 @@ CREATE TABLE [dbo].[Ve] (
 
 -------------------- ADD------------------
 -- Add Th? Lo?i
-INSERT [dbo].[TheLoai] ([IDTheLoai], [TenTheLoai]) VALUES (N'TL01', N'H‡nh ??ng')
-INSERT [dbo].[TheLoai] ([IDTheLoai], [TenTheLoai]) VALUES (N'TL02', N'Ho?t HÏnh')
-INSERT [dbo].[TheLoai] ([IDTheLoai], [TenTheLoai]) VALUES (N'TL03', N'H‡i')
+INSERT [dbo].[TheLoai] ([IDTheLoai], [TenTheLoai]) VALUES (N'TL01', N'H√†nh ??ng')
+INSERT [dbo].[TheLoai] ([IDTheLoai], [TenTheLoai]) VALUES (N'TL02', N'Ho?t H√¨nh')
+INSERT [dbo].[TheLoai] ([IDTheLoai], [TenTheLoai]) VALUES (N'TL03', N'H√†i')
 INSERT [dbo].[TheLoai] ([IDTheLoai], [TenTheLoai]) VALUES (N'TL04', N'Vi?n T??ng')
 -- Add Phim
-INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] ,[IDTheLoai]) VALUES (N'P01', N'Avengers: Cu?c Chi?n VÙ C?c',  150, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'M?', N'Anthony Russo,  Joe Russo', 2022 , N'TL01')
-INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] , [IDTheLoai]) VALUES (N'P02', N'L?t M?t: 3 Ch‡ng Khuy?t',  100, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'Vi?t Nam', N'L˝ H?i', 2022 , N'TL02')
-INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] , [IDTheLoai]) VALUES (N'P03', N'100 Ng‡y BÍn Em',  100, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'Vi?t Nam', N'V? Ng?c Ph??ng', 2022 , N'TL03')
-INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] , [IDTheLoai]) VALUES (N'P04', N'Ng?ng V?t PhiÍu L?u K˝', 91, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'M?', N'Christopher Jenkins', 2022, N'TL04')
--- Add Lo?i m‡n hÏnh
+INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] ,[IDTheLoai]) VALUES (N'P01', N'Avengers: Cu?c Chi?n V√¥ C?c',  150, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'M?', N'Anthony Russo,  Joe Russo', 2022 , N'TL01')
+INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] , [IDTheLoai]) VALUES (N'P02', N'L?t M?t: 3 Ch√†ng Khuy?t',  100, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'Vi?t Nam', N'L√Ω H?i', 2022 , N'TL02')
+INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] , [IDTheLoai]) VALUES (N'P03', N'100 Ng√†y B√™n Em',  100, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'Vi?t Nam', N'V? Ng?c Ph??ng', 2022 , N'TL03')
+INSERT into [Phim] ([IDPhim], [TenPhim],  [ThoiLuong], [NgayKhoiChieu], [NgayKetThuc], [SanXuat], [DaoDien], [NamSX] , [IDTheLoai]) VALUES (N'P04', N'Ng?ng V?t Phi√™u L?u K√Ω', 91, CAST(N'2022-05-01' AS Date), CAST(N'2022-06-01' AS Date), N'M?', N'Christopher Jenkins', 2022, N'TL04')
+-- Add Lo·∫°i m√†n h√¨nh
+INSERT [dbo].[LoaiManHinh] ([IDLoaiManHinh], [TenManHinh]) VALUES (N'MH01', N'2D')
+INSERT [dbo].[LoaiManHinh] ([IDLoaiManHinh], [TenManHinh]) VALUES (N'MH02', N'3D')
+INSERT [dbo].[LoaiManHinh] ([IDLoaiManHinh], [TenManHinh]) VALUES (N'MH03', N'IMAX')
+INSERT [dbo].[LoaiManHinh] ([IDLoaiManHinh], [TenManHinh]) VALUES (N'MH04', N'4D')
+-- Add ƒê·ªãnh d·∫°ng phim
+INSERT [dbo].[DinhDangPhim] ([IDDinhDangPhim], [IDPhim], [IDLoaiManHinh]) VALUES (N'DD01', N'P01', N'MH01')
+INSERT [dbo].[DinhDangPhim] ([IDDinhDangPhim], [IDPhim], [IDLoaiManHinh]) VALUES (N'DD02', N'P01', N'MH03')
+INSERT [dbo].[DinhDangPhim] ([IDDinhDangPhim], [IDPhim], [IDLoaiManHinh]) VALUES (N'DD03', N'P02', N'MH01')
+INSERT [dbo].[DinhDangPhim] ([IDDinhDangPhim], [IDPhim], [IDLoaiManHinh]) VALUES (N'DD04', N'P03', N'MH02')
+-- Add Phong Chi·∫øu
+INSERT [dbo].[PhongChieu] ([IDPhongChieu], [TenPhong], [IDManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC01', N'CINEMA 01', N'MH01', 140, 1, 10, 14)
+INSERT [dbo].[PhongChieu] ([IDPhongChieu], [TenPhong], [IDManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC02', N'CINEMA 02', N'MH01', 140, 1, 10, 14)
+INSERT [dbo].[PhongChieu] ([IDPhongChieu], [TenPhong], [IDManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC03', N'CINEMA 03', N'MH03', 140, 1, 10, 14)
+INSERT [dbo].[PhongChieu] ([IDPhongChieu], [TenPhong], [IDManHinh], [SoChoNgoi], [TinhTrang], [SoHangGhe], [SoGheMotHang]) VALUES (N'PC04', N'CINEMA 04', N'MH01', 140, 1, 10, 14)
+--Add L·ªãch chi·∫øu
+INSERT [dbo].[LichChieu] ([IDLichChieu], [ThoiGianChieu], [IDPhong], [IDDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC01', CAST(N'2022-05-02T08:50:00.000' AS DateTime), N'PC01', N'DD01', 85000.0000, 1)
+INSERT [dbo].[LichChieu] ([IDLichChieu], [ThoiGianChieu], [IDPhong], [IDDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC02', CAST(N'2022-05-02T08:05:00.000' AS DateTime), N'PC02', N'DD01', 85000.0000, 0)
+INSERT [dbo].[LichChieu] ([IDLichChieu], [ThoiGianChieu], [IDPhong], [IDDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC03', CAST(N'2022-05-02T08:10:00.000' AS DateTime), N'PC03', N'DD02', 85000.0000, 0)
+INSERT [dbo].[LichChieu] ([IDLichChieu], [ThoiGianChieu], [IDPhong], [IDDinhDang], [GiaVe], [TrangThai]) VALUES (N'LC04', CAST(N'2022-05-02T09:20:00.000' AS DateTime), N'PC04', N'DD03', 85000.0000, 0)

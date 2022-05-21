@@ -29,7 +29,11 @@ namespace DoAn
         public string DaoDien { get; set; }
         public Nullable<int> NamSX { get; set; }
         public string IDTheLoai { get; set; }
-    
+        public override string ToString()
+        {
+            return TenPhim;
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DinhDangPhim> DinhDangPhims { get; set; }
         public virtual TheLoai TheLoai { get; set; }

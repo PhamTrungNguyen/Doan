@@ -1,4 +1,6 @@
-﻿using pbl3.Admin.DoanhThu;
+﻿using DoAn;
+using DoAn.View.Admin.Ve;
+using pbl3.Admin.DoanhThu;
 using pbl3.Admin.KhachHang;
 using pbl3.Admin.NhanVien;
 using pbl3.Admin.ThongTinTaiKhoan;
@@ -11,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KhachHang = pbl3.Admin.KhachHang.KhachHang;
+using NhanVien = pbl3.Admin.NhanVien.NhanVien;
 
 namespace pbl3
 {
@@ -112,6 +116,15 @@ namespace pbl3
             this.Text = "Thông tin tài khoản";
             pnAdmin.Controls.Clear();
             ThongTinTaiKhoan duLieu = new ThongTinTaiKhoan();
+            duLieu.Dock = DockStyle.Fill;
+            pnAdmin.Controls.Add(duLieu);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Text = "Bán vé";
+            pnAdmin.Controls.Clear();
+            BanVe duLieu = new BanVe();
             duLieu.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(duLieu);
         }

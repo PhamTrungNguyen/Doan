@@ -1,4 +1,4 @@
-﻿namespace pbl3.Admin.DuLieu
+﻿namespace DoAn.View.Admin.DuLieu
 {
     partial class PhongChieu
     {
@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvPhongChieu = new System.Windows.Forms.DataGridView();
+            this.cbbManHinh = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnPhongChieuThemXem = new System.Windows.Forms.Button();
             this.btnPhongChieuThemXoa = new System.Windows.Forms.Button();
@@ -47,42 +49,42 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPhongChieuMaPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvPhongChieu = new System.Windows.Forms.DataGridView();
-            this.cbbManHinh = new System.Windows.Forms.ComboBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongChieu)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Controls.Add(this.cbbManHinh);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnPhongChieuThemXem);
-            this.panel1.Controls.Add(this.btnPhongChieuThemXoa);
-            this.panel1.Controls.Add(this.btnPhongChieuThemSua);
-            this.panel1.Controls.Add(this.btnPhongChieuThem);
-            this.panel1.Controls.Add(this.txtPhongChieuGheMoiHang);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtPhongChieuSoHangGhe);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtPhongChieuChoNgoi);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtPhongChieuTinhTrang);
-            this.panel1.Controls.Add(this.txtPhongChieuTenPhong);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtPhongChieuMaPhong);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(924, 182);
-            this.panel1.TabIndex = 0;
+            this.panel2.Controls.Add(this.dgvPhongChieu);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 182);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1035, 212);
+            this.panel2.TabIndex = 3;
+            // 
+            // dgvPhongChieu
+            // 
+            this.dgvPhongChieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhongChieu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPhongChieu.Location = new System.Drawing.Point(0, 0);
+            this.dgvPhongChieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPhongChieu.Name = "dgvPhongChieu";
+            this.dgvPhongChieu.RowHeadersWidth = 62;
+            this.dgvPhongChieu.RowTemplate.Height = 28;
+            this.dgvPhongChieu.Size = new System.Drawing.Size(1035, 212);
+            this.dgvPhongChieu.TabIndex = 0;
+            this.dgvPhongChieu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPhongChieu_RowHeaderMouseClick);
+            // 
+            // cbbManHinh
+            // 
+            this.cbbManHinh.FormattingEnabled = true;
+            this.cbbManHinh.Location = new System.Drawing.Point(149, 101);
+            this.cbbManHinh.Name = "cbbManHinh";
+            this.cbbManHinh.Size = new System.Drawing.Size(159, 28);
+            this.cbbManHinh.TabIndex = 4;
             // 
             // button2
             // 
@@ -114,6 +116,7 @@
             this.btnPhongChieuThemXoa.TabIndex = 2;
             this.btnPhongChieuThemXoa.Text = "Xóa";
             this.btnPhongChieuThemXoa.UseVisualStyleBackColor = true;
+            this.btnPhongChieuThemXoa.Click += new System.EventHandler(this.btnPhongChieuThemXoa_Click);
             // 
             // btnPhongChieuThemSua
             // 
@@ -255,36 +258,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng :";
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Controls.Add(this.dgvPhongChieu);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 182);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(924, 334);
-            this.panel2.TabIndex = 1;
-            // 
-            // dgvPhongChieu
-            // 
-            this.dgvPhongChieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhongChieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPhongChieu.Location = new System.Drawing.Point(0, 0);
-            this.dgvPhongChieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvPhongChieu.Name = "dgvPhongChieu";
-            this.dgvPhongChieu.RowHeadersWidth = 62;
-            this.dgvPhongChieu.RowTemplate.Height = 28;
-            this.dgvPhongChieu.Size = new System.Drawing.Size(924, 334);
-            this.dgvPhongChieu.TabIndex = 0;
-            this.dgvPhongChieu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPhongChieu_RowHeaderMouseClick);
-            // 
-            // cbbManHinh
-            // 
-            this.cbbManHinh.FormattingEnabled = true;
-            this.cbbManHinh.Location = new System.Drawing.Point(149, 101);
-            this.cbbManHinh.Name = "cbbManHinh";
-            this.cbbManHinh.Size = new System.Drawing.Size(159, 28);
-            this.cbbManHinh.TabIndex = 4;
+            this.panel1.Controls.Add(this.cbbManHinh);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnPhongChieuThemXem);
+            this.panel1.Controls.Add(this.btnPhongChieuThemXoa);
+            this.panel1.Controls.Add(this.btnPhongChieuThemSua);
+            this.panel1.Controls.Add(this.btnPhongChieuThem);
+            this.panel1.Controls.Add(this.txtPhongChieuGheMoiHang);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtPhongChieuSoHangGhe);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtPhongChieuChoNgoi);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtPhongChieuTinhTrang);
+            this.panel1.Controls.Add(this.txtPhongChieuTenPhong);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtPhongChieuMaPhong);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1035, 182);
+            this.panel1.TabIndex = 2;
             // 
             // PhongChieu
             // 
@@ -292,20 +293,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PhongChieu";
-            this.Size = new System.Drawing.Size(924, 516);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Size = new System.Drawing.Size(1035, 394);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongChieu)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dgvPhongChieu;
+        private System.Windows.Forms.ComboBox cbbManHinh;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnPhongChieuThemXem;
         private System.Windows.Forms.Button btnPhongChieuThemXoa;
@@ -324,8 +326,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPhongChieuMaPhong;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvPhongChieu;
-        private System.Windows.Forms.ComboBox cbbManHinh;
+        private System.Windows.Forms.Panel panel1;
     }
 }

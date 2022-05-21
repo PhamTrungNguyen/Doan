@@ -57,7 +57,6 @@ C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.DuLieu.DinhDang.re
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.DuLieu.LichChieu.resources
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.DuLieu.LoaiManHinh.resources
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.DuLieu.Phim.resources
-C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.DuLieu.PhongChieu.resources
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.DuLieu.TheLoai.resources
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.KhachHang.KhachHang.resources
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\pbl3.Admin.NhanVien.NhanVien.resources
@@ -74,3 +73,5 @@ C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\DoAn.csproj.CoreCompileInputs
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\DoAn.csproj.CopyComplete
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\DoAn.exe
 C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\DoAn.pdb
+C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\DoAn.View.Admin.DuLieu.PhongChieu.resources
+C:\Users\Win 10 Pro\Desktop\BT.NET\DoAn2\obj\Debug\DoAn.View.Admin.Ve.BanVe.resources
